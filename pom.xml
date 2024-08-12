@@ -11,11 +11,11 @@
     <groupId>com.luzx</groupId>
     <artifactId>luzx-blog</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>luzx-blog</name>
     <description>luzx-blog</description>
-<!--    <packaging>pom</packaging>-->
     <modules>
-
+        <module>auth-user</module>
     </modules>
 <!--    <url/>-->
 <!--    <licenses>-->
