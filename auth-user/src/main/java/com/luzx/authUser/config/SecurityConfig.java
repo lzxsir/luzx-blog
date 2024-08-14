@@ -1,7 +1,6 @@
 package com.luzx.authUser.config;
 
 import com.luzx.authUser.filter.JwtAuthenticationFilter;
-import io.jsonwebtoken.JwtHandlerAdapter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
