@@ -1,0 +1,68 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: auth-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://rm-bp118y002bj7sr0wm6o.mysql.rds.aliyuncs.com:3306/luzx_blog?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: Lzx@123456
+    hikari:
+      connection-timeout: 30000
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+jwt:
+  # jwt配置
+  secret: E7A3F9C2D4B1E8G5H0J3K6L9M2N5P8Q1R4T7U0V2W4X6Y8Z0A1B3C5
+  # 15分钟
+  access-token-expiration: 900000
+  # 7天
+  refresh-token-expiration: 604800000
+
+
+
+logging:
+  level:
+    root: INFO
+
+
+
+ # 数据库连接
+
+
+# MyBatis Plus 配置
+mybatis-plus:
+  # 配置 mapper 扫描路径
+  mapper-locations: classpath*:mapper/**/*.xml
+  # 实体扫描，多个package用逗号或分号分隔
+  type-aliases-package: com.example.entity
+
+  # 全局配置
+  global-config:
+    db-config:
+      # 主键类型 0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+      id-type: assign_id
+      # 逻辑删除配置
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      # 字段策略
+      insert-strategy: not_null
+      update-strategy: not_null
+
+  # 配置
+  configuration:
+    # 自动驼峰命名
+    map-underscore-to-camel-case: true
+    # 开启缓存
+    cache-enabled: true
+    # 日志实现
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 返回map时，null值不显示
+    call-setters-on-nulls: true
+    # 返回类型为Map时，下划线转驼峰
+    object-wrapper-factory: com.baomidou.mybatisplus.extension.MybatisMapWrapperFactory

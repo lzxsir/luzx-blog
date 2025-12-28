@@ -1,12 +1,12 @@
-package com.luzx.authUser;
+package com.luzx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AuthUserApplication {
+public class AuthApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AuthUserApplication.class);
+        SpringApplication.run(AuthApplication.class);
     }
 }
